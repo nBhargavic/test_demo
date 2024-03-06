@@ -23,9 +23,9 @@ public class HomePageSteps {
     }
     @Test(priority = 1)
     public void HomePageSteps(){
-        homepage.UserName("rahul");
-        homepage.PasswordName("rahul@2021");
-        homepage.ClickonLoginButton();
+        homepage.Username("rahul");
+        homepage.Password("rahul@2021");
+        homepage.clickonLoginButton();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
         Assert.assertTrue(driver.findElement(By.xpath("h1[text()='Trending Now']")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.xpath("h1[text()='Originals']")).isDisplayed());

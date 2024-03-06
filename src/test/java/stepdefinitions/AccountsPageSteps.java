@@ -12,13 +12,13 @@ import java.time.Duration;
 
 public class AccountsPageSteps {
     public WebDriver driver;
-    public AccountsPage accountspage = new AccountsPage(driver);
+    public AccountsPage accountspage;
     @BeforeMethod
     public void setup(){
         System.setProperty("webdriver.chrome.driver","C:\\Users\\91830\\Downloads\\chromedriver-win32 (5)\\chromedriver-win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://qamoviesapp.ccbp.tech");
-        accountspage = new AccountsPageSteps(driver);
+        accountspage = new AccountsPage(driver);
     }
     @Test(priority = 17)
     public void AccountsPageSteps(){

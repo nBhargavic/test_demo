@@ -23,8 +23,8 @@ public class SearchPageSteps {
     }
     @Test
     public void SearchPageSteps() {
-        searchpage.UserName("rahul");
-        searchpage.PasswordName("rahul@2021");
+        searchpage.Username("rahul");
+        searchpage.Password("rahul@2021");
         searchpage.clickonLoginButton();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
         driver.findElement(By.xpath("//svg[@stroke='currentColor']")).click();

@@ -7,26 +7,27 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
+import pages.MovieDetailsPage;
 
 import java.time.Duration;
 
-public class MoviesDetailsPageSteps {
+public class MovieDetailsPageSteps {
+
     public WebDriver driver;
-    public MoviesDetailsPage moviedetailspage = new MoviesDetailsPage(driver);
+    public MovieDetailsPage moviedetailspage;
     @BeforeMethod
     public void setup(){
         System.setProperty("webdriver.chrome.driver","C:\\Users\\91830\\Downloads\\chromedriver-win32 (5)\\chromedriver-win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://qamoviesapp.ccbp.tech");
-        moviedetailspage = new MoviesDetailsPageSteps(driver);
+        moviedetailspage = new MovieDetailsPage(driver);
     }
 
     @Test(priority = 1)
 
     public void MoviesDetailsPage(){
-        moviedetailspage.UserName("rahul");
-        moviedetailspage.PasswordName("rahul@2021");
+        moviedetailspage.Username("rahul");
+        moviedetailspage.Password("rahul@2021");
         moviedetailspage.clickonLoginButton();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000));
         driver.findElement(By.xpath("img[starts-with(@alt='No Time')]")).click();

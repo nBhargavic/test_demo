@@ -14,7 +14,7 @@ import java.time.Duration;
 public class HeaderSectionSteps{
 
         public static WebDriver driver;
-        public HeaderSectionPage headerpage = new HeaderSectionPage(driver);
+        public HeaderSectionPage headerpage;
         @BeforeMethod
         public void setup(){
             System.setProperty("webdriver.chrome.driver","C:\\Users\\91830\\Downloads\\chromedriver-win32 (5)\\chromedriver-win32\\chromedriver.exe");
@@ -24,8 +24,8 @@ public class HeaderSectionSteps{
         }
         @Test(priority = 1)
         public void HomePageTest(){
-            headerpage.UserName("rahul");
-            headerpage.PasswordName("rahul@2021");
+            headerpage.Username("rahul");
+            headerpage.Password("rahul@2021");
             headerpage.clickonLoginButton();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
             Assert.assertTrue(driver.findElement(By.cssSelector("ul.nav-menu-list>:first-child")).isDisplayed());

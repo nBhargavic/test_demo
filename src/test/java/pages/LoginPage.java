@@ -29,7 +29,4 @@ public class LoginPage {
     public void Password(String password){
         driver.findElement(PasswordName).sendKeys(password);
     }
-
-
-
 }
