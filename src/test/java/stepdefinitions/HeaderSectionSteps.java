@@ -24,8 +24,8 @@ public class HeaderSectionSteps{
         }
         @Test(priority = 1)
         public void HomePageTest(){
-            headerpage.Username("rahul");
-            headerpage.Password("rahul@2021");
+            headerpage.enterUserName("rahul");
+            headerpage.enterPasswordName("rahul@2021");
             headerpage.clickonLoginButton();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
             Assert.assertTrue(driver.findElement(By.cssSelector("ul.nav-menu-list>:first-child")).isDisplayed());
